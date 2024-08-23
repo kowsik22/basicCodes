@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>file</title>
+    <link href="icon.css" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <div class="main">
+            <img src="k.jpg" alt=""/>
+            <input type="file"/>
+        </div>
+    </div>
+
+    <script>
+        let img =document.querySelector('img');
+        let input= document.querySelector('input');
+
+        input.addEventListener('change',function(){
+            img.src=URL.createObjectURL(input.files[0])
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.main {
+  display: grid;
+  justify-content: center;
+  position: relative;
+  top: 150px;
+}
+
+img {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}

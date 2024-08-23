@@ -1,0 +1,28 @@
+div {
+  height: 200px;
+  width: 300px;
+  background-color: red;
+}
+
+.two {
+  position: relative;
+  top: 50%;
+  left: 35%;
+  .one {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+    height: auto;
+    cursor: pointer;
+    padding: 10px;
+    border: transparent;
+  }
+}
+
+.one:hover {
+  border: 1px solid black;
+}
+body {
+  display: grid;
+  justify-content: center;
+}

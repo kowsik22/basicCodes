@@ -1,0 +1,17 @@
+div {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+/*h1 {
+  color: red;
+}
+*/
+.love {
+  font-size: 180px;
+  background-image: url(./gif.webp);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  background-clip: text;
+}
