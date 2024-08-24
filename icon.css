@@ -1,8 +1,10 @@
 .main {
-  display: grid;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  height: 100vh;
+  overflow: hidden;
   position: relative;
-  top: 150px;
 }
 
 img {
