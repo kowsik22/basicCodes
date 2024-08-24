@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            margin: 100px 0 0 100px;
+            gap: 10px;
+            width: 90%;
+            height:450px;
+        }
+
+        .container img{
+           width: 15%;
+           height:100%;
+           object-fit: cover;
+           border-radius: 10px;
+           border: 2px solid rgb(255,255,0.684);
+           transition: all ease-in-out 0.5s;
+        }
+
+        .container img:hover{
+            width: 20%;
+            cursor: pointer;
+            transform: translateY(-16px);
+        }
+
+
+        @media  screen and (max-width:768px) {
+            .container{
+              flex-direction: column;
+              align-items: center;
+              margin: 50px 0 0 0;
+              height: auto;
+
+            }
+
+            .container img{
+                width:50% ;
+                height:auto;
+            }
+            .container img:hover{
+                width:55%;
+            }
+            
+        }
+        @media screen and (max-width: 480px){
+            .container{
+                flex-direction: column;
+                margin: 20px 0 0 0 ;
+                align-items: center;
+                height: auto;
+                gap:5px;
+                
+            }
+            .container img{
+                width:80%;
+                height: auto;
+                margin-bottom: 5px;
+            }
+            .container img:hover{
+                width: 85%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+       <img src="kowsik.jpg">
+       <img src="kowsik.jpg">
+       <img src="kowsik.jpg">
+       <img src="kowsik.jpg">
+       <img src="kowsik.jpg">
+     
+    </div>
+</body>
+</html>
