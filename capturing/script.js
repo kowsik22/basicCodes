@@ -21,3 +21,4 @@ document.addEventListener(
   },
   true
 ); // 'true' enables capturing phase
+// 'true' enables capturing phase
