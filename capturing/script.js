@@ -21,4 +21,14 @@ document.addEventListener(
   },
   true
 ); // 'true' enables capturing phase
-// 'true' enables capturing phase
+
+// Stop propagation for clicks inside the navigation menu
+
+navmenu.addEventListener(
+  "click",
+  function (e) {
+    e.stopPropagation();
+    console.log("Click detected inside the menu, keeping sub menu open.");
+  },
+  true
+);
