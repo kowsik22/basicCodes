@@ -37,3 +37,16 @@ console.log(typeof num);
 
 let randomNum = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
 console.log(randomNum);
+
+let obj = {
+  name: "kowsik",
+  age: 22,
+  sex: "male",
+  height: 179,
+};
+
+console.log(Object.keys(obj).length);
+
+let array = Object.entries(obj);
+
+console.log(array);
