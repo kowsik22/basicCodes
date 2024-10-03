@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrolling tutorial</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        h1{
+          text-align: center;
+          color: black;
+        
+        }
+        .one{
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 10px 10px;
+            background-color: yellow;
+            margin-left: 20%;
+            margin-right: 20%;
+            position: relative;
+            margin-top: 80px;
+            
+           
+        }
+        .two{
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 10px 10px;
+            background-color: yellow;
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Javascript Animation Scrolling</h1>
+    <div>
+        <div data-aos="fade-top" class="one">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam repellendus suscipit sapiente autem atque id! Facilis doloremque quibusdam exercitationem molestias. Sunt excepturi, quasi ex voluptatibus itaque laborum dolorum molestiae debitis!</p>
+        </div>
+        <div data-aos="fade-left" class="two">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam repellendus suscipit sapiente autem atque id! Facilis doloremque quibusdam exercitationem molestias. Sunt excepturi, quasi ex voluptatibus itaque laborum dolorum molestiae debitis!</p>
+        </div>
+        <div data-aos="fade-right" class="two">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam repellendus suscipit sapiente autem atque id! Facilis doloremque quibusdam exercitationem molestias. Sunt excepturi, quasi ex voluptatibus itaque laborum dolorum molestiae debitis!</p>
+        </div>
+       
+           
+       
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
