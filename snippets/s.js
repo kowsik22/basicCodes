@@ -50,3 +50,6 @@ console.log(Object.keys(obj).length);
 let array = Object.entries(obj);
 
 console.log(array);
+
+let otp = Math.floor(Math.random() * 1e4);
+console.log("Generated Otp is:", otp);
