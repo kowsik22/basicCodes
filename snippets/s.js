@@ -51,5 +51,34 @@ let array = Object.entries(obj);
 
 console.log(array);
 
-let otp = Math.floor(Math.random() * 1e4);
+let otp = Math.floor(Math.random() * 1e7);
 console.log("Generated Otp is:", otp);
+
+//callback- passing a function as an argument to another function
+
+function greet(callback) {
+  setTimeout(() => {
+    let name = "hello kowsik";
+    callback(name);
+  }, 1000);
+}
+
+greet(function (result) {
+  console.log(result);
+});
+
+//call and apply-  these methods are nothing but when we want to pass properties of one object to another whithout mentioning them in the other object.
+
+let obj1 = {
+  name: "kowsik",
+
+  greet: function (age) {
+    console.log(`Hey ${name} is turning ${age} in a month`);
+  },
+};
+
+let obj2 = {
+  name: "karthik",
+};
+
+obj1.greet.call(obj2, 22);
