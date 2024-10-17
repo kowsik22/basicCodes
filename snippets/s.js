@@ -82,3 +82,57 @@ let obj2 = {
 };
 
 obj1.greet.call(obj2, 22);
+
+//clousers
+
+// let cl1 = () => {
+//   let count = 0;
+//   return function () {
+//     count++;
+//     console.log(count);
+//   };
+// };
+
+// let cl2 = cl1();
+
+// console.log(cl2());
+// console.log(cl2());
+
+let actors = [
+  { name: "rajini", movies: 333 },
+  { name: "surya", movies: 53 },
+  { name: "chiru", movies: 533 },
+  { name: "nani", movies: 23 },
+  { name: "karthi", movies: 33 },
+  { name: "kamal", movies: 334 },
+];
+
+// let actor = actors.filter((act) => act.movies <= 100);
+// console.log(actor);
+
+// console.log(actors.sort((a, b) => b.movies - a.movies));
+
+console.log(actors.reduce((total, actor) => total + actor.movies, 0));
+
+// methods
+
+let arrs = "wdesed";
+
+let a1 = arrs.includes("e");
+console.log(a1.coun);
+
+let twovariables = function () {
+  var a = (b = "♦️");
+  let c = "📁";
+};
+
+twovariables();
+
+console.log(typeof a);
+console.log(typeof b);
+console.log(typeof c);
+
+//reverse
+
+let arrr = ["1", 2, 3, 4, 5];
+console.log(arrr.reverse());

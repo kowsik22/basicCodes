@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      [popover]::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      #mypopover {
+        border: none;
+        overflow: hidden;
+        background-color: lightblue;
+        border-radius: 10px;
+      }
+
+      .login {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        /* padding: 10px 10px; */
+        margin: 10px 10px;
+      }
+
+      .login input {
+        padding: 5px 30px;
+        text-align: left;
+        border: none;
+        border-radius: 10px;
+      }
+
+      .login button {
+        margin-top: 10px;
+        width: 80px;
+        margin-left: 70px;
+        cursor: pointer;
+        padding: 5px 10px;
+        border-radius: 10px;
+        border: none;
+      }
+
+      .login button:hover {
+        background-color: rgb(34, 178, 51);
+        transition: 1s;
+      }
+
+      .btn {
+        border: none;
+        cursor: pointer;
+        padding: 5px 10px;
+        background-color: black;
+        color: white;
+        font-size: 15px;
+        border-radius: 20px;
+      }
+      .btn:hover {
+        transform: translateY(-10px);
+      }
+      .btn1 {
+        display: grid;
+        margin-left: 45%;
+        margin-top: 20%;
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn1">
+      <button
+        popovertarget="mypopover"
+        popovertargetaction="toggle"
+        class="btn"
+      >
+        <!-- popovertargetaction="toggle" popovertargetaction="hide"  popovertargetaction="show"-->
+        Toggle the popover
+      </button>
+    </div>
+    <div id="mypopover" popover>
+      <div class="login">
+        <label>Email</label>
+        <input type="email" class="name" placeholder="enter your email" />
+        <label>Password</label>
+        <input type="password" class="password" placeholder="password please" />
+        <button>Submit</button>
+      </div>
+    </div>
+    <!-- <script>
+      let popover = document.getElementById("mypopover");
+      let button = document.getElementById("button");
+
+      popover.closePopover();
+    </script> -->
+  </body>
+</html>
