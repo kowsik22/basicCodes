@@ -83,20 +83,21 @@ let obj2 = {
 
 obj1.greet.call(obj2, 22);
 
-//clousers
+//clousers;
 
-// let cl1 = () => {
-//   let count = 0;
-//   return function () {
-//     count++;
-//     console.log(count);
-//   };
-// };
+let cl1 = () => {
+  let count = 0;
+  function inner() {
+    count++;
+    console.log(count);
+  }
+  return inner;
+};
 
-// let cl2 = cl1();
+let cl2 = cl1();
 
-// console.log(cl2());
-// console.log(cl2());
+cl2();
+cl2();
 
 let actors = [
   { name: "rajini", movies: 333 },
@@ -136,3 +137,13 @@ console.log(typeof c);
 
 let arrr = ["1", 2, 3, 4, 5];
 console.log(arrr.reverse());
+
+//helloworld
+
+let hell = () => {
+  return function () {
+    return "hello world";
+  };
+};
+let result = hell();
+console.log(result());
