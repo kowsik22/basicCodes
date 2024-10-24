@@ -54,7 +54,7 @@ console.log(array);
 let otp = Math.floor(Math.random() * 1e7);
 console.log("Generated Otp is:", otp);
 
-//callback- passing a function as an argument to another function
+//callback- passing a function as parameter to another function
 
 function greet(callback) {
   setTimeout(() => {
@@ -71,9 +71,9 @@ greet(function (result) {
 
 let obj1 = {
   name: "kowsik",
-
+  age: 24,
   greet: function (age) {
-    console.log(`Hey ${name} is turning ${age} in a month`);
+    console.log(`Hey ${this.name} is turning ${age} in a month`);
   },
 };
 
@@ -81,6 +81,7 @@ let obj2 = {
   name: "karthik",
 };
 
+obj1.greet();
 obj1.greet.call(obj2, 22);
 
 //clousers;
@@ -147,3 +148,114 @@ let hell = () => {
 };
 let result = hell();
 console.log(result());
+
+//try catch
+
+try {
+  let result = 10 / 3;
+  console.log(res - ult);
+} catch (error) {
+  console.log("undefined variable is getting accssed", error.message);
+}
+
+let users = [
+  { id: 1, name: "ram", age: 33 },
+  { id: 2, name: "shyam", age: 33 },
+  { id: 3, name: "hari", age: 33 },
+  { id: 4, name: "sita", age: 33 },
+];
+
+for (let { id, name, age } of users) {
+  console.log(`name:, ${name}, age:, ${age}`);
+}
+
+//oops
+
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greeting() {
+    console.log(`My name is ${this.name} and I am ${this.age}`);
+  }
+}
+
+class boy extends Person {
+  constructor(name, age, gender) {
+    super(name, age);
+    this.gender = gender;
+  }
+
+  greet() {
+    console.log(
+      `My name is ${this.name} and I am ${this.age} and I am a ${this.gender}`
+    );
+  }
+}
+
+let person1 = new Person("John", 33);
+person1.greeting();
+
+let boy1 = new boy("karthi", 34, "male");
+boy1.greet();
+boy1.greeting();
+
+// async and await to run the code line by line
+
+async function data() {
+  let response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  let data = await response.json();
+  return data;
+}
+
+async function run() {
+  try {
+    let matter = await data();
+    console.log("processed data:", matter);
+    // console.log("processed data:", matte);
+  } catch (e) {
+    console.log(e.message);
+  }
+}
+
+run();
+
+//volume
+
+let volumeofsphere = (r) => {
+  let volume = (4 / 3) * Math.PI * Math.pow(r, 3);
+  console.log(volume);
+};
+
+volumeofsphere(2);
+
+//callback
+
+let add = (x, y) => {
+  return x + y;
+};
+
+let mul = (x, z) => {
+  return x * z;
+};
+
+let calc = (a, b, operate) => {
+  return operate(a, b);
+};
+
+console.log("sum of two numbers:", calc(2, 5, add));
+console.log("mul of two numbers:", calc(2, 5, mul));
+
+//BMI Task
+
+let bmiramesh = (massramesh, heightramesh) => {
+  return massramesh / (heightramesh * heightramesh);
+};
+let bmisuresh = (masssuresh, heightsuresh) => {
+  return masssuresh / (heightsuresh * heightsuresh);
+};
+
+console.log(bmiramesh(78, 1.69));
+console.log(bmisuresh(92, 1.95));
