@@ -257,5 +257,147 @@ let bmisuresh = (masssuresh, heightsuresh) => {
   return masssuresh / (heightsuresh * heightsuresh);
 };
 
-console.log(bmiramesh(78, 1.69));
-console.log(bmisuresh(92, 1.95));
+let bmiRamesh = bmiramesh(78, 1.69);
+let bmiSuresh = bmisuresh(92, 1.95);
+
+let great =
+  bmiRamesh > bmiSuresh
+    ? console.log(
+        `ramesh has a higher BMI of ${bmiRamesh} than suresh ${bmiSuresh} `
+      )
+    : console.log(
+        `suresh has a higher BMI of ${bmiSuresh} than ramesh ${bmiRamesh}`
+      );
+
+// console.log(bmiramesh(78, 1.69));
+// console.log(bmisuresh(92, 1.95));
+
+//grouping elements in an array using reduce
+
+let humans = [
+  { name: "kowsik", gender: "male" },
+  { name: "suresh", gender: "male" },
+  { name: "ramesh", gender: "male" },
+  { name: "priya", gender: "female" },
+  { name: "sush", gender: "female" },
+  { name: "resh", gender: "female" },
+  { name: "priya", gender: "female" },
+  { name: "resh", gender: "" },
+];
+let group = humans.reduce((acc, currentnames) => {
+  if (acc[currentnames.gender]) {
+    acc[currentnames.gender].push(currentnames.name);
+  } else {
+    acc[currentnames.gender] = [currentnames.name];
+  }
+  return acc;
+}, {});
+
+console.log(group);
+
+//in js NAN is a number type and if null  convert  to number we get 0
+
+console.log(Number(null));
+
+// when we compare two arrays in js it converts those arrays into strings and compare each position
+
+console.log([44, 33] > [88]);
+console.log([3] > [2]);
+
+// finding the names starts with m
+
+let actor = ["mahesh", "manoj", "maheshbabu", "rajini", "kowsik", "ramesh"];
+
+let findingactors = (actors, initial) => {
+  return actors.filter((actor) => actor.startsWith(initial));
+};
+
+let res = findingactors(actor, "m");
+console.log("The names starting with letter m", res);
+
+//includes
+
+for (let i = 0; i < actor.length; i++) {
+  // console.log(actor[i]);
+  console.log(actor[i].includes("e"));
+}
+
+//////////////
+
+let actorss = [
+  { name: "kowsik", movies: 100 },
+  { name: "wsik", movies: 10 },
+  { name: "owsik", movies: 100 },
+  { name: "sik", movies: 10 },
+];
+
+let find = actorss.filter((act) => {
+  act.movies > 10;
+});
+
+console.log(find);
+
+//deleting duplicates using filter
+/**
+ * here actor means each item and index means items index
+ * self means total array like act
+ */
+
+let act = [
+  { name: "kowsik", movies: 100 },
+  { name: "kowsik", movies: 100 },
+  { name: "owsik", movies: 100 },
+  { name: "sik", movies: 10 },
+];
+
+let unique = act.filter((actor, index, self) => {
+  return (
+    index ===
+    self.findIndex((a) => {
+      return a.name === actor.name && a.movies === actor.movies;
+    })
+  );
+});
+
+console.log(unique);
+
+//spread
+
+let array1 = [
+  { name: "kowsik", movies: 100 },
+  { name: "kowsik", movies: 100 },
+];
+let array2 = [
+  { name: "owsik", movies: 100 },
+  { name: "sik", movies: 10 },
+];
+let a3 = [...array1, ...array2];
+console.log(a3);
+
+//destructuring
+
+let amb = [122, 3, 4, 5, 6];
+
+let [bb, , dd, ee] = amb;
+
+console.log(dd);
+
+let job = {
+  name: "kowsik",
+  age: 25,
+};
+
+let { name, age } = job;
+console.log(name);
+
+//even
+
+let number = [1, 2, 3, 4, 5, 6, 7];
+
+let product = number
+  .filter((a) => a % 2 == 0)
+  .reduce((acc, num) => {
+    return acc * num;
+  }, 1);
+
+console.log(product);
