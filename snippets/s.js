@@ -401,3 +401,38 @@ let product = number
   }, 1);
 
 console.log(product);
+
+//settimeout
+
+let z = 10;
+
+let update = () => {
+  if (z > 0) {
+    console.log(z);
+    z--;
+    setTimeout(update, 1000);
+  } else {
+    console.log("Happy Diwali");
+  }
+};
+
+update();
+
+//addeventlistener and onclick
+
+let btn = document.getElementById("btn");
+
+for (let i = 0; i < 5; i++) {
+  btn.onclick = () => {
+    console.log("Button clicked!", i);
+  };
+}
+
+//splicing
+
+const numbe = [1, 2, 3, 4, 5, 6];
+
+const sliced = numbe.slice(1, 5);
+const spliced = sliced.splice(1, 3, 5);
+
+console.log(sliced, spliced);
