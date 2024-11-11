@@ -403,7 +403,7 @@ let product = number
 console.log(product);
 
 //settimeout
-
+/*
 let z = 10;
 
 let update = () => {
@@ -416,7 +416,9 @@ let update = () => {
   }
 };
 
+
 update();
+*/
 
 //addeventlistener and onclick
 
@@ -436,3 +438,126 @@ const sliced = numbe.slice(1, 5);
 const spliced = sliced.splice(1, 3, 5);
 
 console.log(sliced, spliced);
+
+//generating otp
+
+let gotp = () => {
+  let otp = Math.floor(100000 + Math.random() * 900000).toString();
+  return otp;
+};
+console.log(gotp());
+
+//
+
+let today = new Date();
+
+console.log(today.getTime());
+
+///////////////////////////////////////////////////////////////
+let clacratio = (arr) => {
+  let primecount = 0;
+  let oddcount = 0;
+  let evencount = 0;
+
+  arr.forEach((num) => {
+    if (num % 2 == 0) {
+      evencount++;
+    } else if (num % 2 != 0) {
+      oddcount++;
+    }
+    if (isPrime(num)) {
+      primecount++;
+    }
+  });
+
+  let evenRatio = evencount / arr.length;
+  let oddRatio = oddcount / arr.length;
+  let primeRatio = primecount / arr.length;
+
+  console.log(evenRatio.toFixed(6), oddRatio.toFixed(6), primeRatio.toFixed(6));
+};
+
+let isPrime = (num) => {
+  if (num <= 1) return false;
+  for (let i = 2; i < Math.sqrt(num); i++) {
+    if (num % i == 0) return false;
+  }
+  return true;
+};
+
+let ratio = [2, 3, 4, 5, 7];
+clacratio(ratio);
+
+let higher = ["k", "e", "r", "a"];
+
+higher.forEach((item) => console.log(item));
+
+let destructuring = {
+  nam: "kowsik",
+  ag: 23,
+  height: 179,
+};
+
+let { nam: names, ag: ages, height } = destructuring;
+
+console.log(names, ages);
+
+// sorting 2d arrays
+
+let sortedArray = [
+  [3, 5],
+  [9, 7],
+  [6, 8],
+];
+
+sortedArray.forEach((subarray) => {
+  subarray.sort((a, b) => a - b);
+});
+
+let subsort = sortedArray.sort((a, b) => a[0] - b[0]);
+let subsort1 = sortedArray.sort((a, b) => a[1] - b[1]);
+
+console.log("sorted the array bu the first elememt of the subarray:", subsort);
+console.log(
+  "sorted the array bu the second elememt of the subarray:",
+  subsort1
+);
+
+//entries, values and keys
+
+let objects = {
+  name: "kowsik",
+  greet() {
+    return "hello";
+  },
+};
+
+console.log(Object.values(objects));
+
+//tasks
+
+let mixedData = {
+  name: "kowsik",
+  age: 24,
+  city: "chennai",
+  occupation: "software engineer",
+  height: 178,
+  salary: 25000,
+};
+
+let task = (data) => {
+  let values = Object.values(data);
+
+  let longest = values
+    .filter((value) => typeof value === "string")
+    .reduce((a, b) => (a.length > b.length ? a : b), "");
+  let filtering = values
+    .filter((value) => typeof value === "number")
+    .reduce((acc, curr) => acc + curr, 0);
+  console.log(filtering);
+  console.log(longest);
+};
+
+task(mixedData);
+
+//longest string

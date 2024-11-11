@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snippets</title>
     <style>
-        img{
+        /* img{
             aspect-ratio: 16/9;
             width:30%;
             margin-top: 30px;
@@ -20,18 +20,78 @@
         .one{
             display: flex;
             justify-content: center;
+        } */
+
+        img{
+            width:200px;
+        }
+
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            gap:30px;
+        }
+        h1{
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <img src="k1.jpeg" alt="k1"></img>
+    <div class="grid-container">
+        <img src="k1.jpeg" alt="k1"></img>
+        <img src="k1 copy.jpeg" alt="k1"></img>
+        <img src="k1.jpeg" alt="k1"></img>
+        <img src="k1.jpeg" alt="k1"></img>
+        <img src="k1.jpeg" alt="k1"></img>
+        <img src="k1.jpeg" alt="k1"></img>
+    </div>
+   
+
 
     <div class="one">
         <button id="btn"> click me</button>
+
+        <h1 id="countdown"></h1>
     </div>
     
+    <!-- <script>
+        let countdown = document.getElementById('countdown');
 
+        function updateCountdown(){
+            let today = new Date();
+            let newYear = new Date(
+                today.getFullYear() + 1, 0, 1
+            );
+            let timeLeft = newYear - today;
+            let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) % (1000 * 60 * 60)) / (1000 * 60);
+            let seconds = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) % (1000 * 60 * 60) % (1000 * 60)) / 1000;
+            countdown.innerHTML = `Time left: ${days} days, ${hours} hours, ${minutes}, ${seconds} seconds`;
+        }
 
+        setInterval(updateCountdown, 1000)
+
+    </script> -->
+
+       <script>
+        const deadline = new Date('December 17, 2024 15:37:25').getTime();
+        let countdown = document.getElementById('countdown');
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = deadline - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) % (1000 * 60 * 60) / (1000 * 60));
+            let seconds = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) % (1000 * 60 * 60) % (1000 * 60)) / 1000;
+            countdown.innerHTML = `Time left: ${days} days, ${hours} hours, ${minutes}, ${seconds} seconds`;
+        }
+
+        setInterval(updateCountdown, 1000)
+
+    </script>
     <script src="s.js"></script>
 </body>
 </html>
